@@ -1,0 +1,32 @@
+# https://github.com/imfunniee/gitfolio/issues/75
+
+language: node_js
+node_js:
+  - "10" # Node version
+
+dist: trusty
+
+before_script:
+  - git clone https://github.com/kylelobo/gitfolio.git
+  - cd gitfolio
+  - npm install
+
+script:
+  - node ./bin/gitfolio.js build kylelobo --theme dark --fork --sort star --order desc --twitter Lazy_Kyle --linkedin kyle-lobo
+  - cp -a dist/. ../
+  - cd ..
+#   - sed -i 's/imfunniee/kylelobo/g' index.html
+  - sed -i 's/title>kylelobo/title>Kyle Lobo/g' index.html
+  - sed -i 's/\"kylelobo.github.io/\"https:\/\/kylelobo.github.io/g' index.html
+  - sed -i '278,281d' index.html
+  # - sed -i '78,103d; 130,155d; 169,181d; 304,307d' index.html
+  - rm -rf gitfolio/
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  keep_history: true # Don't delete commit history
+  on:
+    branch: master
+  target_branch: master
