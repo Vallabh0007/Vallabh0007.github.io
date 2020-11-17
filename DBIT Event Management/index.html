@@ -11,11 +11,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+	
+
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
 				<section id="header" class="wrapper">
+					<div class="sk-folding-cube">
+						<div class="sk-cube1 sk-cube"></div>
+						<div class="sk-cube2 sk-cube"></div>
+						<div class="sk-cube4 sk-cube"></div>
+						<div class="sk-cube3 sk-cube"></div>
+					  </div>
 
 					<!-- Logo -->
 						<div id="logo">
@@ -142,15 +150,31 @@
 									</div>
 								</div>
 								<ul class="actions special">
-									<li><a href="#" class="button style1 large">Add your own event</a></li>
+									<li><a href="Node-Blog-master/public/css/style.css" class="button style1 large">Add your own event</a></li>
 									<li><a href="#" class="button style2 large">how to</a></li>
 								</ul>
 							</section>
 
 					</div>
 				</section>
-
+			<!--Post-->
+			<script type="text/template" id="add-tpl">
+				<h2>Adding a New Blog</h2>
+			   
+				<form class="form-add" role="form">
+				  <div class="form-group">
+					<label for="title">Title</label>
+					<input type="text" name="title" class="form-control" id="title" placeholder="Enter Your Blog Title">
+				  </div>
+				  <div class="form-group">
+					<label for="content">Content</label>
+					<textarea name="content" class="form-control" rows="20"></textarea>
+				  </div>
+				  <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+				</form>
+			  </script>	
 			<!-- Highlights -->
+
 				<section id="highlights" class="wrapper style3">
 					<div class="title">The Endorsements</div>
 					<div class="container">
