@@ -1,0 +1,6 @@
+<script type="text/javascript">
+    function alertParentValue() {
+        alert(window.opener.document.forms['testform'].atextfield.value);
+    }
+</script>
+<a href="#" onclick="return alertParentValue();">Also click me!</a>
